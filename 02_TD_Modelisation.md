@@ -103,3 +103,34 @@ Dans l’onglet **Analyze**, observez et **interprétez** :
 3. Revenez à l’accueil Qlik accedez au modèle déployé.  
 4. Cliquez sur **Activate** pour pouvoir l’utiliser ensuite dans les automatisations (TD 3).
 
+---
+
+## Résultats attendus
+
+### 1. Comparaison des modèles testés
+<p align="center">
+  <img src="images/Models.png" alt="Models Comparison" width="450"/>
+</p>
+
+### 2. Vue d’ensemble du Best modèle
+![Model Overview](images/Model_overview.png)
+
+### 3. Matrice de confusion
+<p align="center">
+  <img src="images/Confusion_matrix.png" alt="Confusion Matrix" width="450"/>
+</p> 
+
+### 4. Importance des variables (SHAP)
+<p align="center">
+  <img src="images/SHAP.png" alt="SHAP Importance" width="450"/>
+</p> 
+
+### 5. Courbe ROC
+
+<p align="center">
+  <img src="images/ROC_curve.png" alt="ROC Curve" width="450"/>
+</p>
+
+
+
+
