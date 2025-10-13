@@ -47,38 +47,28 @@ L’objectif de cette première partie est de **préparer les données brutes** 
 ## Étape 4 — Création d’un fork
 
 1. Ajoutez un **processeur "Fork"** pour séparer le flux en deux branches :
-####  4.1 Branche 1 : `Analyse de la distribution de la variable cible`
-
+2. **Branche 1 :** `Analyse de la distribution de la variable cible`
 Dans la **première sortie** du fork :
-1. Ajoutez un **Aggregate**.  
-2. Paramétrez :
-   - **Group By** : `is_churn`
-   - **Opération** : `count(is_churn)`  
-3. Ajoutez une **cible de fichier** après cette agrégation :
+2.1. Ajoutez un **Aggregate**.  
+2.2. Paramétrez : **Group By** : `is_churn` / **Opération** : `count(is_churn)`  
+2.3. Ajoutez une **cible de fichier** après cette agrégation :
    - Nom du fichier :  `Churn_Dispertion_table.qvd`
-
-##### Remarque :
-Qlik Data Flow ne visualise que les **1000 premières lignes**.  
+   ##### Remarque :
+    Qlik Data Flow ne visualise que les **1000 premières lignes**.  
 Pour voir les résultats complets, consultez le fichier cible généré dans votre **espace d’accueil Qlik** après exécution `Run Flux`.
 
-##### Resultats attendus :
-`is_churn = 0 → 7963 clients`
-`is_churn = 1 → 2037 clients`
+    ##### Resultats attendus :
+    `is_churn = 0 → 7963 clients`
+    `is_churn = 1 → 2037 clients`
 - *Ce déséquilibre pourrait biaiser un modèle classique, mais Qlik AutoML détecte et corrige automatiquement ce type de situation en ajustant les poids d’apprentissage des classes.*
 
 
-#### 4.2 Branche 2 : `Préparation pour l’entraînement / validation`
-
-1. Ajoutez un nouveau **Calcul de champs** dans la deuxième sortie du Fork
-2. Créez les champs suivants 
-2.1. Créez un champ `split` permettant de diviser le dataset en deux parties
-`train`: 80 % pour l’entraînement,
-`val`: 20 % pour la validation.
-    - Indice : utilisez la valeur aléatoire du champ `rand_key` pour effectuer la séparation.
-
-2.2. Créez un champ `balance_ratio` qui normalise le solde (balance) par rapport au salaire estimé (estimated_salary)
-
-2.3. Créez un champ `log_salary` permettant de stabiliser les valeurs extrêmes du salaire en appliquant une transformation logarithmique.
+3. **Branche 2 :** `Préparation pour l’entraînement / validation`
+3.1. Ajoutez un nouveau **Calcul de champs** dans la deuxième sortie du Fork
+3.2. Créez les champs suivants 
+3.2.1. Créez un champ `split` permettant de diviser le dataset en deux parties  `train`: 80 % pour l’entraînement / `val`: 20 % pour la validation.
+3.2.2  Créez un champ `balance_ratio` qui normalise le solde (balance) par rapport au salaire estimé (estimated_salary)
+3.2.3 Créez un champ `log_salary` permettant de stabiliser les valeurs extrêmes du salaire en appliquant une transformation logarithmique.
    
 
 ##### Indication :
