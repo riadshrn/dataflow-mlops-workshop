@@ -51,13 +51,12 @@ L’objectif de cette première partie est de **préparer les données brutes** 
 Dans la **première sortie** du fork :
 2.1. Ajoutez un **Aggregate**.  
 2.2. Paramétrez : **Group By** : `is_churn` / **Opération** : `count(is_churn)`  
-2.3. Ajoutez une **cible de fichier** après cette agrégation :
-   - Nom du fichier :  `Churn_Dispertion_table.qvd`
-   ##### Remarque :
+2.3. Ajoutez une **cible de fichier** après cette agrégation : `Churn_Dispertion_table.qvd`
+    - Remarque :
     Qlik Data Flow ne visualise que les **1000 premières lignes**.  
 Pour voir les résultats complets, consultez le fichier cible généré dans votre **espace d’accueil Qlik** après exécution `Run Flux`.
 
-    ##### Resultats attendus :
+    - Resultats attendus :
     `is_churn = 0 → 7963 clients`
     `is_churn = 1 → 2037 clients`
 - *Ce déséquilibre pourrait biaiser un modèle classique, mais Qlik AutoML détecte et corrige automatiquement ce type de situation en ajustant les poids d’apprentissage des classes.*
@@ -84,19 +83,15 @@ Ajoutez un **Filtre** :
 - Champ : `split`
 - Condition : `split = "train"`
 
-##### Première sortie (train)
-1. Ajoutez une **Cible** : `Churn_train.qvd`
+1. **Première sortie (train)** : Ajoutez une **Cible** : `Churn_train.qvd`
 
-##### Deuxième sortie (val)
-1. Ajoutez un **Sélectionneur de champs** et conservez uniquement :
+2. **Deuxième sortie (val)** 
+2.1. Ajoutez un **Sélectionneur de champs** et conservez uniquement :
    `country`, `age`, `balance`, `products_number`, `active_member`, `balance_ratio`, `customer_id`, `is_churn`
 *(Ces colonnes correspondent aux paramètres du modèle AutoML de la partie 2.)*
-
-2. Ajoutez un **Filtre** supplémentaire pour limiter les lignes : 
-`15560000 < customer_id < 15576000`
+2.2. Ajoutez un **Filtre** supplémentaire pour limiter les lignes : `15560000 < customer_id < 15576000`
+2.3. Ajoutez enfin une **Cible de fichier** : `Churn_val_Filtred.txt`
     - Cela permet de réduire le volume d’échantillons pendant la phase de test automatique.
-
-3. Ajoutez enfin une **Cible de fichier** : `Churn_val_Filtred.txt`
 
 ---
 
