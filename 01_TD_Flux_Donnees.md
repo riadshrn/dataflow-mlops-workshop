@@ -49,12 +49,12 @@ L’objectif de cette première partie est de **préparer les données brutes** 
 1. Ajoutez un **processeur "Fork"** pour séparer le flux en deux branches :
 2. **Branche 1 :** `Analyse de la distribution de la variable cible`
 <br>Dans la **première sortie** du fork :
-<br>2.1. Ajoutez un **Aggregate**.  
-<br>2.2. Paramétrez : **Group By** : `is_churn` / **Opération** : `count(is_churn)`  
+<br>2.1. Ajoutez un **Aggregate**.
+<br>2.2. Paramétrez : **Group By** : `is_churn` / **Opération** : `count(is_churn)` 
 <br>2.3. Ajoutez une **cible de fichier** après cette agrégation : `Churn_Dispertion_table.qvd`
     - Remarque :
     Qlik Data Flow ne visualise que les **1000 premières lignes**.  
-Pour voir les résultats complets, consultez le fichier cible généré dans votre **espace d’accueil Qlik** après exécution `Run Flux`.
+    - Pour voir les résultats complets, consultez le fichier cible généré dans votre **espace d’accueil Qlik** après exécution `Run Flux`.
 
     - Resultats attendus :
     `is_churn = 0 → 7963 clients`
@@ -83,8 +83,7 @@ Ajoutez un **Filtre** :
 - Champ : `split`
 - Condition : `split = "train"`
 
-1. **Première sortie (train)** : Ajoutez une **Cible** : `Churn_train.qvd`
-
+1. **Première sortie (train)** : Ajoutez une **Cible** : `Churn_train.qvd` 
 2. **Deuxième sortie (val)** 
 <br>2.1. Ajoutez un **Sélectionneur de champs** et conservez uniquement :
    `country`, `age`, `balance`, `products_number`, `active_member`, `balance_ratio`, `customer_id`, `is_churn`
