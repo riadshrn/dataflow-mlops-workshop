@@ -88,8 +88,8 @@ Ajoutez un **Filtre** :
 2. **Deuxième sortie (val)** 
 2.1. Ajoutez un **Sélectionneur de champs** et conservez uniquement :
    `country`, `age`, `balance`, `products_number`, `active_member`, `balance_ratio`, `customer_id`, `is_churn`
-*(Ces colonnes correspondent aux paramètres du modèle AutoML de la partie 2.)*
-2.2. Ajoutez un **Filtre** supplémentaire pour limiter les lignes : `15560000 < customer_id < 15576000`
+*(Ces colonnes correspondent aux paramètres du modèle AutoML de la partie 2.)* 
+2.2. Ajoutez un **Filtre** supplémentaire pour limiter les lignes : `15560000 < customer_id < 15576000` 
 2.3. Ajoutez enfin une **Cible de fichier** : `Churn_val_Filtred.txt`
     - Cela permet de réduire le volume d’échantillons pendant la phase de test automatique.
 
