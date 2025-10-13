@@ -35,8 +35,8 @@ L’objectif de cette première partie est de **préparer les données brutes** 
 
 1. Ajoutez un **processeur "Calcul des champs"** juste après la source de données.  
 2. Créez les champs suivants :
-2.1. Créez un champ binaire `is_churn` indiquant si le client a quitté la banque (1) ou non (0).
-2.2. Créez un champ aléatoire `rand_key` qui permettra plus tard de séparer le dataset en deux parties (entraînement / validation)
+    2.1. Créez un champ binaire `is_churn` indiquant si le client a quitté la banque (1) ou non (0). 
+    2.2. Créez un champ aléatoire `rand_key` qui permettra plus tard de séparer le dataset en deux parties (entraînement / validation)
 
 ##### Indication :
 - `is_churn = IF(churn = 1, 1, 0)`
