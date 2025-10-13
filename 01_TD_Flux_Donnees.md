@@ -35,8 +35,8 @@ L’objectif de cette première partie est de **préparer les données brutes** 
 
 1. Ajoutez un **processeur "Calcul des champs"** juste après la source de données.  
 2. Créez les champs suivants :
-    2.1. Créez un champ binaire `is_churn` indiquant si le client a quitté la banque (1) ou non (0). 
-    2.2. Créez un champ aléatoire `rand_key` qui permettra plus tard de séparer le dataset en deux parties (entraînement / validation)
+<br>2.1. Créez un champ binaire `is_churn` indiquant si le client a quitté la banque (1) ou non (0). 
+<br>2.2. Créez un champ aléatoire `rand_key` qui permettra plus tard de séparer le dataset en deux parties (entraînement / validation)
 
 ##### Indication :
 - `is_churn = IF(churn = 1, 1, 0)`
@@ -48,10 +48,10 @@ L’objectif de cette première partie est de **préparer les données brutes** 
 
 1. Ajoutez un **processeur "Fork"** pour séparer le flux en deux branches :
 2. **Branche 1 :** `Analyse de la distribution de la variable cible`
-Dans la **première sortie** du fork :
-2.1. Ajoutez un **Aggregate**.  
-2.2. Paramétrez : **Group By** : `is_churn` / **Opération** : `count(is_churn)`  
-2.3. Ajoutez une **cible de fichier** après cette agrégation : `Churn_Dispertion_table.qvd`
+<br>Dans la **première sortie** du fork :
+<br>2.1. Ajoutez un **Aggregate**.  
+<br>2.2. Paramétrez : **Group By** : `is_churn` / **Opération** : `count(is_churn)`  
+<br>2.3. Ajoutez une **cible de fichier** après cette agrégation : `Churn_Dispertion_table.qvd`
     - Remarque :
     Qlik Data Flow ne visualise que les **1000 premières lignes**.  
 Pour voir les résultats complets, consultez le fichier cible généré dans votre **espace d’accueil Qlik** après exécution `Run Flux`.
@@ -63,11 +63,11 @@ Pour voir les résultats complets, consultez le fichier cible généré dans vot
 
 
 3. **Branche 2 :** `Préparation pour l’entraînement / validation`
-3.1. Ajoutez un nouveau **Calcul de champs** dans la deuxième sortie du Fork
-3.2. Créez les champs suivants 
-3.2.1. Créez un champ `split` permettant de diviser le dataset en deux parties  `train`: 80 % pour l’entraînement / `val`: 20 % pour la validation.
-3.2.2  Créez un champ `balance_ratio` qui normalise le solde (balance) par rapport au salaire estimé (estimated_salary)
-3.2.3 Créez un champ `log_salary` permettant de stabiliser les valeurs extrêmes du salaire en appliquant une transformation logarithmique.
+<br>3.1. Ajoutez un nouveau **Calcul de champs** dans la deuxième sortie du Fork
+<br>3.2. Créez les champs suivants 
+<br>3.2.1. Créez un champ `split` permettant de diviser le dataset en deux parties  `train`: 80 % pour l’entraînement / `val`: 20 % pour la validation.
+<br>3.2.2  Créez un champ `balance_ratio` qui normalise le solde (balance) par rapport au salaire estimé (estimated_salary)
+<br>3.2.3 Créez un champ `log_salary` permettant de stabiliser les valeurs extrêmes du salaire en appliquant une transformation logarithmique.
    
 
 ##### Indication :
@@ -86,11 +86,11 @@ Ajoutez un **Filtre** :
 1. **Première sortie (train)** : Ajoutez une **Cible** : `Churn_train.qvd`
 
 2. **Deuxième sortie (val)** 
-2.1. Ajoutez un **Sélectionneur de champs** et conservez uniquement :
+<br>2.1. Ajoutez un **Sélectionneur de champs** et conservez uniquement :
    `country`, `age`, `balance`, `products_number`, `active_member`, `balance_ratio`, `customer_id`, `is_churn`
 *(Ces colonnes correspondent aux paramètres du modèle AutoML de la partie 2.)* 
-2.2. Ajoutez un **Filtre** supplémentaire pour limiter les lignes : `15560000 < customer_id < 15576000` 
-2.3. Ajoutez enfin une **Cible de fichier** : `Churn_val_Filtred.txt`
+<br>2.2. Ajoutez un **Filtre** supplémentaire pour limiter les lignes : `15560000 < customer_id < 15576000` 
+<br>2.3. Ajoutez enfin une **Cible de fichier** : `Churn_val_Filtred.txt`
     - Cela permet de réduire le volume d’échantillons pendant la phase de test automatique.
 
 ---
