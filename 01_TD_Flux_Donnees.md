@@ -64,7 +64,7 @@ L’objectif de cette première partie est de **préparer les données brutes** 
 
 3. **Branche 2 :** `Préparation pour l’entraînement / validation`
 <br>3.1. Ajoutez un nouveau **Calcul de champs** dans la deuxième sortie du Fork
-<br>3.2. Créez les champs suivants 
+<br>3.2. Créez les champs suivants (`Dans le meme nœud`)
 <br>3.2.1. Créez un champ `split` permettant de diviser le dataset en deux parties  `train`: 80 % pour l’entraînement / `val`: 20 % pour la validation.
 <br>3.2.2  Créez un champ `balance_ratio` qui normalise le solde (balance) par rapport au salaire estimé (estimated_salary)
 <br>3.2.3 Créez un champ `log_salary` permettant de stabiliser les valeurs extrêmes du salaire en appliquant une transformation logarithmique.
@@ -77,7 +77,7 @@ L’objectif de cette première partie est de **préparer les données brutes** 
 
 ---
 
-## Étape 7 — Séparation des jeux de données
+## Étape 5 — Séparation des jeux de données
 
 Ajoutez un **Filtre** :
 - Champ : `split`
@@ -94,7 +94,7 @@ Ajoutez un **Filtre** :
 
 ---
 
-## Étape 8 — Exécution du flux
+## Étape 6 — Exécution du flux
 
 1. Cliquez sur **Run flow** en haut à droite.  
 2. Une fois le flux exécuté, revenez à la page d’accueil Qlik Cloud.  
