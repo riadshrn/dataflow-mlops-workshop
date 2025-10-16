@@ -48,7 +48,7 @@ Une fois l’expérimentation terminée :
 
 1. Revenez dans l’onglet **Data**.  
 2. Sélectionnez uniquement les colonnes suivantes :
-   - `country`, `age`, `gender`, `balance`, `products_number`, `active_member`,  
+   - `country`, `age`, `balance`, `products_number`, `active_member`,  
      `balance_ratio`, `customer_id`, `is_churn`
 3. Relancez une nouvelle expérimentation → **Version 2**.  
    > Cela permet d’uniformiser les colonnes pour comparaison pendant l'atelier.
