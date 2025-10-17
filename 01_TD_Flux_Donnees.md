@@ -24,17 +24,33 @@ L’objectif de cette première partie est de **préparer les données brutes** 
    Vous pouvez le télécharger :
    - depuis Kaggle : [Bank Customer Churn Dataset](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset)  
    - ou directement depuis le repo GitHub du TD :  [Data](https://github.com/riadshrn/dataflow-mlops-workshop/tree/main/data)
-3. Une fois chargé, **visualisez les colonnes** dans le flux.  
-   - Analysez les types de données.  
-   - Vérifiez s’il y a des **valeurs manquantes**.  
+3. Une fois chargé, ouvrez le flux de données et affichez l’onglet `Aperçu des données`.  
+   - Ouvrez les Paramètres et définissez `Chargement limité` à 10000 (Cela permet de charger tout le dataset.)
    - Consultez sur [Kaggle](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset) la **définition de chaque colonne** pour comprendre le jeu de données.
-
 ---
 
-## Étape 3 — Ajout de champs calculés
+## Étape 3 — Analyse et traitement des valeurs manquantes
+Pour explorer plus en détail les statistiques et valeurs nulles : 
+1. Ajoutez un processeur `Table recipe` / `Recette de table` juste après le nœud du dataset. 
+2. Dans les propriétés de ce nœud, cliquez sur Modifier la recette de table 
+3. Pour chaque colonne :
+En bas à gauche de la fenêtre, vous verrez les statistiques suivantes :
+`Distinct values`, `Null values`, `Min`, `Max`, `Median` 
+4. Si vous détectez des valeurs manquantes, allez dans :
+`Fonction` > `General` > `Remplir les cellules nulles et vides` > `Choisissez la colonne à traiter` > `Sélectionnez la valeur de remplacement (ex. : médiane, moyenne, ...)` 
+
+- Cependant, dans les TD suivants (ML Experimentation), les valeurs manquantes seront automatiquement imputées par le moteur ML.
+Par exemple, extrait d’un rapport d’expérimentation :
+   ```
+   Age imputed with value: 29.69911764705882  
+   Country imputed with value: other
+   ```
+---
+
+## Étape 4 — Ajout de champs calculés
 
 1. Ajoutez un **processeur "Calcul des champs"** juste après la source de données.  
-2. Créez les champs suivants :
+2. Créez les champs suivants (`Dans le meme nœud`):
 <br>2.1. Créez un champ binaire `is_churn` indiquant si le client a quitté la banque (1) ou non (0). 
 <br>2.2. Créez un champ aléatoire `rand_key` qui permettra plus tard de séparer le dataset en deux parties (entraînement / validation)
 
@@ -44,7 +60,7 @@ L’objectif de cette première partie est de **préparer les données brutes** 
 
 ---
 
-## Étape 4 — Création d’un fork
+## Étape 5 — Création d’un fork
 
 1. Ajoutez un **processeur "Fork"** pour séparer le flux en deux branches :
 2. **Branche 1 :** `Analyse de la distribution de la variable cible`
@@ -77,7 +93,7 @@ L’objectif de cette première partie est de **préparer les données brutes** 
 
 ---
 
-## Étape 7 — Séparation des jeux de données
+## Étape 6 — Séparation des jeux de données
 
 Ajoutez un **Filtre** :
 - Champ : `split`
@@ -94,7 +110,7 @@ Ajoutez un **Filtre** :
 
 ---
 
-## Étape 8 — Exécution du flux
+## Étape 7 — Exécution du flux
 
 1. Cliquez sur **Run flow** en haut à droite.  
 2. Une fois le flux exécuté, revenez à la page d’accueil Qlik Cloud.  
