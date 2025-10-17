@@ -126,11 +126,10 @@ Revenez dans l’onglet **Edit**, puis supprimez le nœud Output précédent.
 #### Indication
 1. Dans le bloc **Send Mail → Inputs → Body**, cliquez **dans le texte HTML** à l’endroit voulu  
    (par ex. juste après `</b> ` et avant `</li>`).
-2. À droite du champ **Body**, cliquez sur le **sélecteur de valeurs** (la petite icône de données).
-3. Choisissez la source :
+2. Choisissez la source :
    - **Inputs** → pour le champs Customer.
    - **Output from Generate Prediction** → pour les champs calculés par le modèle.
-4. Sélectionnez le champ à insérer → un **jeton** s’ajoute au texte (il sera évalué à l’exécution).
+3. Sélectionnez le champ à insérer → un **jeton** s’ajoute au texte (il sera évalué à l’exécution) : par exemple `Inputs > Customer`, `Generate Prediction > Age` et `Generate Prediction > Is_Churn_1`
 
 * Selon ta configuration de modèle, le champ de probabilité peut s’appeler **`is_churn_1`** (classe positive)
 
