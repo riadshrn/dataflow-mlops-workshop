@@ -93,7 +93,7 @@ Par exemple, extrait d’un rapport d’expérimentation :
 
 ---
 
-## Étape 5 — Séparation des jeux de données
+## Étape 6 — Séparation des jeux de données
 
 Ajoutez un **Filtre** :
 - Champ : `split`
@@ -110,7 +110,7 @@ Ajoutez un **Filtre** :
 
 ---
 
-## Étape 8 — Exécution du flux
+## Étape 7 — Exécution du flux
 
 1. Cliquez sur **Run flow** en haut à droite.  
 2. Une fois le flux exécuté, revenez à la page d’accueil Qlik Cloud.  
