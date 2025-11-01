@@ -82,8 +82,10 @@ Cette étape permet de construire un **pipeline de données propre et reproducti
 - Écriture automatique des prédictions dans **Google Sheets**.  
 - Rafraîchissement et visualisation dans une app analytique Qlik (Matrice de confusion, KPI, Importance des variables).  
 
-<img src="./images/Automatisation_mail.png" alt="Automatisation - e-mail d’alerte" width="400"/>
-<img src="./images/Automatisation_Sheet.png" alt="Automatisation - export vers Google Sheets" width="431"/>
+| Automatisation – e-mail d’alerte | Automatisation – export vers Google Sheets |
+|:--------------------------------:|:------------------------------------------:|
+| <img src="./images/Automatisation_mail.png" alt="Automatisation - e-mail d’alerte" width="400"/> | <img src="./images/Automatisation_Sheet.png" alt="Automatisation - export vers Google Sheets" width="431"/> |
+
 
 ---
 
