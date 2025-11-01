@@ -2,10 +2,9 @@
 
 **Atelier pratique** sur la création d’un pipeline de données automatisé et l’expérimentation de modèles de Machine Learning dans **Qlik Cloud**.
 
-<img src="https://www.selda.net/wp-content/uploads/2024/02/Qlik-Logo-No-Trademark-2-Color-Positive-RGB.png" width="100"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Google_Sheets_2020_Logo.svg" width="40"/>
-
-<img src="https://www.smtpservers.co/wp-content/uploads/2024/04/smtp-com-2.png" width="100"/>
+<p align="center">
+  <img src="https://www.selda.net/wp-content/uploads/2024/02/Qlik-Logo-No-Trademark-2-Color-Positive-RGB.png" width="400" alt="Qlik Logo"/>
+</p>
 
 ---
 
@@ -71,7 +70,7 @@ Cette étape permet de construire un **pipeline de données propre et reproducti
 - Interprétation des résultats (SHAP values).  
 
 <img src="./images/Model_overview.png" alt="Vue d’ensemble du modèle" width="800"/>
-<img src="./images/Models.png" alt="Liste des modèles AutoML" width="380"/> <img src="./images/Confusion_matrix.png" alt="MAT" width="350"/>
+<img src="./images/Models.png" alt="Liste des modèles AutoML" width="360"/> <img src="./images/Confusion_matrix.png" alt="MAT" width="320"/>
 
 
 ### 03. Automatisation & Intégration
