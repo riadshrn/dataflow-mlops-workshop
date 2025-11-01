@@ -70,7 +70,7 @@ Cette étape permet de construire un **pipeline de données propre et reproducti
 - Interprétation des résultats (SHAP values).  
 
 <img src="./images/Model_overview.png" alt="Vue d’ensemble du modèle" width="800"/>
-<img src="./images/Models.png" alt="Liste des modèles AutoML" width="360"/> <img src="./images/Confusion_matrix.png" alt="MAT" width="320"/>
+<img src="./images/Models.png" alt="Liste des modèles AutoML" width="360"/><img src="./images/Confusion_matrix.png" alt="MAT" width="320"/>
 
 
 ### 03. Automatisation & Intégration
